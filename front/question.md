@@ -18,6 +18,10 @@
 
   A： 超文本标记语言
 
+- Q：href和src区别
+
+  A：href是指向资源所在的位置，src是指向外部资源，将指定的内容嵌入到当前位置
+
 ### CSS
 
 - Q： 两种盒模型
@@ -147,18 +151,17 @@ box - sizing: border - box; //IE盒子模型
 
   A： 跨域： 浏览器同源策略， 协议、 域名、 端口号不一致导致； 
 
-      解决跨域： 1. CORS: 在后台增加响应头； 2. jsonp: 在前端得script中引入js文件， 当这个文件成功载入， callback会执行我们url中指定的函数， 并把json作为参数传入
+      解决跨域： 1. CORS: 在后台增加响应头； 2. jsonp: 在前端得script中引入js文件， 当这个文件成功载入， callback会执行我们url中指
+      定的函数， 并把json作为参数传入
 
-    
-
-```
+    ```
       < script type = "text/javascript" >
           function dosomething(jsondata) {
               //处理获得的json数据
           } 
       </script>  
       <script src = "http://example.com/data.php?callback=dosomething" > < /script>
-```
+    ```
 
 - Q： 实现深拷贝
 
@@ -188,6 +191,10 @@ box - sizing: border - box; //IE盒子模型
   let child = new parent();
   child.getValue(); //"hahaha"
 ```
+
+- Q：箭头函数和普通函数区别
+
+  A：箭头函数this指向定义时所在的位置，普通函数指向使用时的对象
 
 - Q： 如何实现数组去重
 
@@ -261,6 +268,11 @@ box - sizing: border - box; //IE盒子模型
     3. localStorage： 存放在浏览器中， 存储容量大， 浏览器关闭， 缓存还存在， 同源浏览器窗口共享
     4. sessionStorage： 存放在浏览器， 但是浏览器关闭， 缓存也消失了， 同源浏览器窗口不共享
 
+- Q：一次完整的HTTP请求
+
+  A：1、域名解析；2、发起TCP的三次握手；3、发起HTTP请求；4、服务端相应HTTP请求，获得HTTP代码；5、浏览器解析HTML,并请求HTML中的资源；
+  6、浏览器对页面进行渲染
+
 ### VUE
 
 - Q： vue的响应原理
@@ -283,3 +295,7 @@ box - sizing: border - box; //IE盒子模型
 - Q：Vue.$set是用于什么
 
   A：如果在实例创建之后添加新的属性到实例上，它不会触发视图更新，这时用Vue.$set，会刷新到视图上(这也是Vue的缺点之一)
+
+- Q：$route和$router区别
+
+  A：$router是实例，包括跳转；$route是路由信息对象，包括path，param等信息
