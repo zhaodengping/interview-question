@@ -281,8 +281,7 @@ box - sizing: border - box; //IE盒子模型
 
 - Q： vue的响应原理
 
-  A： 观察者模式。 vue实例被创建时， 会遍历data里面所有的属性值， 并用object.defineProperty去将他们转化为getter/setter，并进行追踪
-  依赖,每当数据被修改的时候，通知相应的组件进行修改更新
+  A： 观察者模式和订阅-发布者模式。 Vue实例被创建时，会遍历data属性，并通过Object.defineProperty将 这些属性转化为getter/setter，并进行追踪依赖。每当data属性值被修改时，通知watcher 实例，使得跟他相关的组件进行更新
 
 - Q：vue的标签
 
@@ -303,3 +302,21 @@ box - sizing: border - box; //IE盒子模型
 - Q：$route和$router区别
 
   A：$router是实例，包括跳转；$route是路由信息对象，包括path，param等信息
+
+### 性能优化
+
+- 合并 CSS 和 JS 文件，通过前端打包工具去压缩和打包
+
+- 懒加载，控制页面内容一开始无需加载，等到用户真正需要的时候再进行加载内容
+
+- 浏览器缓存
+
+- 页面使用class去操作样式，因为style会让浏览器重新计算DOM值，重新渲染DOM树，使得浏览器加载变慢
+
+### 其他方面
+
+- Q：最近读什么有关技术的书？
+
+- Q：有关注哪个大佬？
+
+- Q：写代码时会遇到什么困难？如何解决？
