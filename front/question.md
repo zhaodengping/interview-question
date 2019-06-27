@@ -32,6 +32,9 @@
 box - sizing: content - box; //W3C盒子模型
 box - sizing: border - box; //IE盒子模型
 ```
+- CSS3的属性
+
+  A：transform,canvas,border-radius,box-shadow,background里的linear-gradient(渐变色),animation等
 
 - Q： 垂直居中
 
