@@ -23,6 +23,33 @@
   A：href是表示超文本引用，用来建立当前元素和文档之前的链接，浏览器会识别改文档为css文档，会进行下载，不会对当前文档停止渲染，
   src是指向外部资源，将指定的内容嵌入到当前位置，会停止当前文档渲染，等待这个资源加载完毕
 
+- 怎样添加、移除、移动、复制、创建和查找节点？
+  A：如下
+  - 创建新节点：
+  ```
+  createElement()//创建具体元素
+  createTextNode()//创建文本节点
+  ```
+
+  - 添加、移除、替换、插入：
+  ```
+  appendChild();//添加 
+  removeChild();//移除
+  replaceChild();//替换
+  insertBefore();//插入
+  ```
+
+  - 查找
+  ```
+  getElementTagName();//标签
+  getElementById();//id
+  getElementByName();//name属性值
+  ```
+
+- Q：浏览器如何渲染页面？
+
+  A：1、解析HTML文件，创建DOM树；2、解析CSS；3、将CSS和DOM树结合；4、布局和绘制
+
 ### CSS
 
 - Q： 两种盒模型
@@ -117,15 +144,23 @@ box - sizing: border - box; //IE盒子模型
 
   A： `clear:both;overflow:hidden/auto;` 
 
+- Q：display:none和visibility:hidden区别
+  
+  A：display:none是直接不渲染，visibility是渲染了，只是看不见
+
+- Q：CSS中link 和@import的区别是？
+
+  A：link是HTML里面的标签，@import是css提供的
+
 ### js
 
 - Q： 基本数据类型
 
-  A： string, number, undefined, null, boolean, Symbol
+  A：基本数据类型： string, number, undefined, null, boolean, Symbol；引用类型：Object,Function,Array
 
 - Q： 事件委托
 
-  A:子事件委托给父元素去监听， 也就是事件冒泡。 
+  A:子事件委托给父元素去监听， 也就是事件冒泡。 可以大量节省内存占用，减少事件注册
 
 - Q: 函数防抖和节流
 
@@ -217,6 +252,15 @@ box - sizing: border - box; //IE盒子模型
 
   - 查：indexof/find
 
+- Q：定时器有哪些？有什么区别？
+
+  A:setTimeout():过一段时间再去触发；setInterval():每过一段时间都去触发
+
+- Q：如何理解js中的原型和原型链？
+
+  A：每个对象都有一个原型，当我们使用某个属性时，如果这个对象本身没有，就会向上的原型prototype中去查找，原型prototype本身也是有原型
+  的，就会一层一层往上，形成原型链
+
 ### TypeScript
 
 - Q： TypeScript对于JavaScript的优势
@@ -274,7 +318,7 @@ box - sizing: border - box; //IE盒子模型
 
 - Q：一次完整的HTTP请求
 
-  A：1、域名解析；2、发起TCP的三次握手；3、发起HTTP请求；4、服务端相应HTTP请求，获得HTTP代码；5、浏览器解析HTML,并请求HTML中的资源；
+  A：1、域名解析，获取相应的IP地址；2、发起TCP连接，进行TCP的三次握手；3、发起HTTP请求；4、服务端相应HTTP请求，返回相应的数据；5、浏览器解析HTML,并请求HTML中的资源；
   6、浏览器对页面进行渲染
 
 ### VUE
@@ -302,6 +346,10 @@ box - sizing: border - box; //IE盒子模型
 - Q：$route和$router区别
 
   A：$router是实例，包括跳转；$route是路由信息对象，包括path，param等信息
+
+- Q：浏览器内核的理解
+
+  A：浏览器内核包括js引擎和渲染引擎。渲染引擎负责渲染网页内容，js引擎实现动态效果
 
 ### 性能优化
 
