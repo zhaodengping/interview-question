@@ -327,6 +327,21 @@ box - sizing: border - box; //IE盒子模型
 
   A： 观察者模式和订阅-发布者模式。 Vue实例被创建时，会遍历data属性，并通过Object.defineProperty将 这些属性转化为getter/setter，并进行追踪依赖。每当data属性值被修改时，通知watcher 实例，使得跟他相关的组件进行更新
 
+- Q：Object.defineProperty()如何创建对象
+
+  A：
+  ```
+  Object.defineProperty(obj, prop, descriptor);//obj为目标对象，prop是定义或修改属性的名字，descriptor是目标对象属性的特性
+  ```
+  ```
+  let obj={
+    test:"hello"
+  }
+  Object.defineProperty(obj,"test",{
+    value:1
+  })
+  ```
+
 - Q：vue的标签
 
   A：router-view,router-link,transition,slot,keep-alive
@@ -349,7 +364,7 @@ box - sizing: border - box; //IE盒子模型
 
 - Q：浏览器内核的理解
 
-  A：浏览器内核包括js引擎和渲染引擎。渲染引擎负责渲染网页内容，js引擎实现动态效果
+  A：浏览器内核包括js引擎和渲染引擎。渲染引擎负责渲染网页内容，js引擎实现动态效果 
 
 ### 性能优化
 
