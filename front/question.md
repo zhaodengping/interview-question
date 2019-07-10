@@ -1,6 +1,24 @@
 
 
 ### HTML
+- Q：HTML全拼(2019-06-28)
+ 
+  A：Hyper Text Markup Language，超文本标记语言
+
+- Q：HTML和XML(ExtentsibleMarkup Language)区别(2019-06-28)
+
+  A：
+  
+  比较内容|HTML|XML
+  :-:|:-:|:-:
+  设计目标|显示数据，如何更好地显示数据，焦点是数据外观|描述数据，什么是数据，如何存放数据，焦点是数据的内容
+  语法|不要求标记的嵌套、配对等；不区分大小写;引号是可用可不用的；可以拥有不带值的属性名；过滤掉空格；|严格要求嵌套、配对，并遵循DTD的树形结构；区分大小写；属性值必须分装在引号中；所有的属性都必须带有相应的值；空白部分不会被解析器自动删除；xml比html 语法要求更严格
+  数据和显示的关系|内容描述与显示方式整合为一体|内容描述与显示方式分离
+  标签|预定义|免费、自定义、可扩展
+  可读性及可维护性|难于阅读、维护|结构清晰、便于阅读、维护
+  结构描述|不支持深层的结构描述|文件结构嵌套可以复杂到任何程度
+  与数据库的关系|没有直接联系|与关系型和层状数据库均可对应和转换
+  超链接|单文件、书签链接|可以定义双向链接、多目标链接、扩展链接
 
 - Q： 你是如何理解 HTML 语义化的？ 
 
@@ -49,6 +67,15 @@
 - Q：浏览器如何渲染页面？
 
   A：1、解析HTML文件，创建DOM树；2、解析CSS；3、将CSS和DOM树结合；4、布局和绘制
+
+- Q：HTML怎么在手机端访问相册、摄像机、录音？(2019-06-28)
+
+  A：
+  ```
+  <input type="file" accept="image/*" capture="camera"> //相册 
+  <input type="file" accept="video/*" capture="camcorder">  //摄像机
+  <input type="file" accept="audio/*" capture="microphone"> //录音
+  ``` 
 
 ### CSS
 
@@ -152,6 +179,13 @@ box - sizing: border - box; //IE盒子模型
 
   A：link是HTML里面的标签，@import是css提供的
 
+- Q：animation和transition区别
+
+  A：
+  - animation属性需要结合@keyFrames去使用，`@keyFrames{from{};to{}}`,而且可以设置每一帧的样式和时间
+
+  - transition属性一般结合`:hover`去实现，只能设置头尾
+
 ### js
 
 - Q： 基本数据类型
@@ -252,6 +286,15 @@ box - sizing: border - box; //IE盒子模型
 
   - 查：indexof/find
 
+- Q：数组常用的8种方法(2019-06-28)
+
+  A：pop,push,shift,unshift,map,filter,find,some,splice,slice,every等
+
+- Q：splice和slice区别(2019-06-28)
+
+  A：slice对原数组进行截取，返回新的数组，原数组不变，`slice(start,end);//不包含end`；
+     splice是在原数组上进行操作，会改变原数组,`splice(start,num,newNum);//开始位置，截取数量，插入的新数据`
+
 - Q：定时器有哪些？有什么区别？
 
   A:setTimeout():过一段时间再去触发；setInterval():每过一段时间都去触发
@@ -260,6 +303,39 @@ box - sizing: border - box; //IE盒子模型
 
   A：每个对象都有一个原型，当我们使用某个属性时，如果这个对象本身没有，就会向上的原型prototype中去查找，原型prototype本身也是有原型
   的，就会一层一层往上，形成原型链
+
+- Q：js函数的特点(2019-06-28)
+
+  A：js函数有以下几种形式：
+     - 正常定义函数，`function a(){};//this指向window`
+
+     - 有把函数赋值给变量，`let a=function(){};//this指向window`
+
+     - 匿名函数,
+     ```
+     let obj={
+       name:"zdp",
+       eat:function(){
+         console.log(this);//this指向是谁调用，就指向谁
+       }
+     }
+     ```
+     
+     - 箭头函数,`setTimeout(()=>{console.log(this)});//箭头函数其实没有this指向，是父级的环境`
+     
+     - 构造函数
+     ```
+     function eat(){
+       console.log(this)
+     }
+     let obj=new eat();//this指向new出来的对象
+     ```
+- Q:垃圾回收机制
+
+  A：
+     
+
+
 
 ### TypeScript
 
@@ -321,6 +397,10 @@ box - sizing: border - box; //IE盒子模型
   A：1、域名解析，获取相应的IP地址；2、发起TCP连接，进行TCP的三次握手；3、发起HTTP请求；4、服务端相应HTTP请求，返回相应的数据；5、浏览器解析HTML,并请求HTML中的资源；
   6、浏览器对页面进行渲染
 
+- Q：跨域全拼(2019-06-28)
+
+  A：CORS:Cross-origin resource sharing(跨资源共享)
+
 ### VUE
 
 - Q： vue的响应原理
@@ -365,6 +445,18 @@ box - sizing: border - box; //IE盒子模型
 - Q：浏览器内核的理解
 
   A：浏览器内核包括js引擎和渲染引擎。渲染引擎负责渲染网页内容，js引擎实现动态效果 
+
+- Q：如何实现工程化？(2019-06-28)
+
+  A：模块化和组件化
+
+- Q：vue最小能实现什么功能(2019-06-28)
+
+  A：模板template
+
+- Q：vuex
+
+  A：
 
 ### 性能优化
 
