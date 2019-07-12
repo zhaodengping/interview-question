@@ -19,3 +19,5 @@
 - vue最小能实现什么功能
 
 - vuex
+
+- delete和Vue.delete删除数组的区别
