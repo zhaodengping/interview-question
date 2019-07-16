@@ -1,5 +1,3 @@
-### 2019-7-12
-
 - HTML全拼
 
 - HTML和XML(ExtentsibleMarkup Language)区别

@@ -21,3 +21,5 @@
 - animation和transition区别
 
 - rem,em,px的理解
+
+- inline-block与block区别，inline-block中间的间隙怎么解决

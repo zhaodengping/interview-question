@@ -1,5 +1,3 @@
-### 2019-7-12
-
 - vue的响应原理
 
 - Object.defineProperty()如何创建对象
@@ -21,3 +19,7 @@
 - vuex
 
 - delete和Vue.delete删除数组的区别
+
+- 组件生命周期
+
+- keep-alive使用
